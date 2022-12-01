@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    max-height: 100vh;
+}
+.whole{
+    display: flex;
+}
+.attribution{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 5px;
+    text-align: center;
+}
+.left-wing{
+    background-image: url(./images/bg-main-desktop.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 35%;
+    height: 100vh;
+}
+.front-card{
+    position: relative;
+    left: 50%;
+    top: 20%;
+}
+.back-card{
+    position: relative;
+    left: 65%;
+    top: 15%;
+}
