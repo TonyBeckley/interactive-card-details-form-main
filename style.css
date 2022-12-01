@@ -5,6 +5,44 @@
     max-height: 100vh;
     font-family: 'Space Grotesk', sans-serif;
 }
+
+form{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    top: 25%;
+    margin-left: 90%;
+    width: 500px;
+}
+label{
+    color: hsl(278, 68%, 11%);
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+}
+input{
+    margin-bottom: 30px;
+    width: 90%;
+    height: 40px;
+    padding: 0 20px;
+    border-radius: 10px;
+    border: solid hsl(270, 3%, 87%);
+    font-size: 1.3rem;
+}
+input::placeholder{
+    color: hsl(279, 6%, 55%);
+}
+button{
+    height: 50px;
+    width: 100%;
+    border: none;
+    font-size: 1rem;
+    margin-top: 20px;
+    background-color: hsl(278, 68%, 11%);
+    color: white;
+    border-radius: 10px;
+}
+
 .whole{
     display: flex;
 }
@@ -36,13 +74,15 @@
     top: 0;
     color: hsl(0, 0%, 100%);
     padding: 35px;
+    letter-spacing: 3px;
+    word-spacing: 5px;
 }
 .fcard-content h1{
     margin-top: 80px;
     margin-bottom: 40px;
-    letter-spacing: 5px;
-    word-spacing: 10px;
+    letter-spacing: 3px;
     font-weight: 300;
+    font-size: 2.3rem;
 }
 .fcard-bottom{
     width: 480px;
@@ -59,6 +99,7 @@
     position: absolute;
     top: 137px;
     right: 200px;
+    letter-spacing: 3px;
     color: white;
 }
 .cards{
@@ -67,6 +108,30 @@
     border-radius: 12px;
     box-shadow: 20px 30px 100px rgba(0, 0, 0, 0.3);
 }
+
+#mm{
+    width: 60px;
+}
+#yy{
+    width: 60px;
+}
+#cvc{
+    width: 100px;
+}
+.exp-cvc{
+    display: flex;
+}
+.expDate-input{
+    margin-top: 10px;
+}
+.exp{
+    margin-right: 30px;
+}
+.cvc-form{
+    display: flex;
+    flex-direction: column;
+}
+
 .thank-you{
     display: none;
 }
