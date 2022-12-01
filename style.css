@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
 *{
     margin: 0;
     padding: 0;
     max-height: 100vh;
+    font-family: 'Space Grotesk', sans-serif;
 }
 .whole{
     display: flex;
@@ -25,8 +27,13 @@
     left: 50%;
     top: 20%;
 }
+
 .back-card{
     position: relative;
     left: 65%;
-    top: 15%;
+    top: 12%;
+}
+.cards{
+    border-radius: 12px;
+    box-shadow: 20px 30px 100px rgba(0, 0, 0, 0.3);
 }
