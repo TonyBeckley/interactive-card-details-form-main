@@ -109,13 +109,13 @@ button{
     box-shadow: 20px 30px 100px rgba(0, 0, 0, 0.3);
 }
 
-#mm{
+#mm-inp{
     width: 60px;
 }
-#yy{
+#yy-inp{
     width: 60px;
 }
-#cvc{
+#cvc-inp{
     width: 205px;
 }
 .exp-cvc{
