@@ -1,8 +1,9 @@
 //Variable declaration for the card display
 const cardNumber = document.querySelector("#card-number");
 const cardName = Document.querySelector("#card-name");
-const cardMmyy = document.querySelector("#card-mmyy"); //Concat the result from mmInp and yyInp then effect the display on the card
 const cardCvc = document.querySelector("#card-cvc");
+const cardMM = document.querySelector("#card-mm")
+const cardYY = document.querySelector("#card-mm"); //Concat the result from mmInp and yyInp then effect the display on the card
 //Variable declaration for the form inputs
 const nameInp = document.getElementById("name-inp");
 const numberInp = document.getElementById("number-inp");
@@ -11,7 +12,7 @@ const yyInp = document.getElementById("yy-inp");
 const cvcInp = document.getElementById("cvc-inp");
 
 
-//Enforce just letters in the c=name-inp field
+//Enforce just letters in the c=name-inp field -- Space not working on name input field
 function alphaOnly(event) {
     let key = event.keyCode;
     return ((key >= 65 && key <= 90) || key == 32 || key == 8)

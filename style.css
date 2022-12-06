@@ -87,7 +87,9 @@ button{
 .fcard-bottom{
     width: 480px;
     display: flex;
-    justify-content: space-between;
+}
+.fcard-bottom p {
+    margin-right: 50%;
 }
 .back-card{
     position: relative;
