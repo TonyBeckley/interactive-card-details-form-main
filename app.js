@@ -1,27 +1,51 @@
 //Variable declaration for the card display
-let cardNumber = document.getElementById("card-number")
-let cardName = Document.getElementById("card-name")
-let cardMmyy = document.getElementById("card-mmyy") //Concat the result from mmInp and yyInp then effect the display on the card
-let cardCvc = document.getElementById("card-cvc")
+const cardNumber = document.querySelector("#card-number");
+const cardName = Document.querySelector("#card-name");
+const cardMmyy = document.querySelector("#card-mmyy"); //Concat the result from mmInp and yyInp then effect the display on the card
+const cardCvc = document.querySelector("#card-cvc");
 //Variable declaration for the form inputs
-let nameInp = document.getElementById("name-inp")
-let numberInp = document.getElementById("number-inp")
-let mmInp = document.getElementById("mm-inp")
-let yyInp = document.getElementById("yy-inp")
-let cvcInp = document.getElementById("cvc-inp")
+const nameInp = document.getElementById("name-inp");
+const numberInp = document.getElementById("number-inp");
+const mmInp = document.getElementById("mm-inp");
+const yyInp = document.getElementById("yy-inp");
+const cvcInp = document.getElementById("cvc-inp");
 
 
-numberInp.onkeydown = function () {
-    const _value = this.value.match(/\d/g) || []
-    const joinNumber = _value.join("")
-    if (this.value.length <= 19) {
-        (numberInp.value.length % 4 == 0) {
-            numberInp.value += "    ";
+//Enforce just letters in the c=name-inp field
+function alphaOnly(event) {
+    let key = event.keyCode;
+    return ((key >= 65 && key <= 90) || key == 32 || key == 8)
+}
+//linking name-Inp to cardName
+function inputName(){
+    cardName.innerHTML = nameInp.value;
+    if (cardName.innerHTML == ""){
+        cardName.innerHTML = nameInp.placeholder;
     }
 }
 
+// Understood the name component and variable declaration
 
-
+// cardNumber display and value assignment
+function inputCardNum() {
+    let cardNumberInput = numberInp.innerHTML;
+    // Do not allow users to write invalid characters
+    let formattedCardNumber = cardNumberInput.replace(/[^\d]/g, "");
+    formattedCardNumber = formattedCardNumber.substring(0, 16);
+    // Split the card number is groups of 4
+    let cardNumberSections = formattedCardNumber.match(/\d{1,4}/g);
+    if (cardNumberSections !== null) {
+       formattedCardNumber = cardNumberSections.join(" ");
+    }
+    // If the formmattedCardNumber is different to what is shown, change the value
+    if (cardNumberInput !== formattedCardNumber) {
+        numberInp.innerHTML = formattedCardNumber;
+    }
+    cardNumber.innerHTML = numberInp.innerHTML;
+    if (numberInp.innerHTML === "") {
+        cardNumber.innerHTML = numberInp.placeholder;
+    }
+}
 
 /*function confirmBtn(){
     checkNumber()
