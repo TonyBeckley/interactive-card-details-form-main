@@ -1,57 +1,102 @@
 //Variable declaration for the card display
 const cardNumber = document.querySelector("#card-number");
-const cardName = Document.querySelector("#card-name");
+const cardName = document.querySelector("#card-name");
 const cardCvc = document.querySelector("#card-cvc");
 const cardMM = document.querySelector("#card-mm")
-const cardYY = document.querySelector("#card-mm"); //Concat the result from mmInp and yyInp then effect the display on the card
+const cardYY = document.querySelector("#card-yy"); //Concat the result from mmInp and yyInp then effect the display on the card
 //Variable declaration for the form inputs
 const nameInp = document.getElementById("name-inp");
 const numberInp = document.getElementById("number-inp");
 const mmInp = document.getElementById("mm-inp");
 const yyInp = document.getElementById("yy-inp");
 const cvcInp = document.getElementById("cvc-inp");
+const submitBtn = document.getElementById("submit-btn")
+const done = document.querySelector(".thank-you")
+const form = document.querySelector("form")
 
-
-//Enforce just letters in the c=name-inp field -- Space not working on name input field
-function alphaOnly(event) {
-    let key = event.keyCode;
-    return ((key >= 65 && key <= 90) || key == 32 || key == 8)
+function setCardName(e) {
+    cardName.innerHTML = format(e.target.value.toUpperCase())
 }
-//linking name-Inp to cardName
-function inputName(){
-    cardName.innerHTML = nameInp.value;
-    if (cardName.innerHTML == ""){
-        cardName.innerHTML = nameInp.placeholder;
+function setCardNunmber(e){
+    cardNumber.innerHTML = format(e.target.value)
+}
+function setCardMonth (e){
+    cardMM.innerHTML = format(e.target.value)
+}
+function setCardYear(e){
+    cardYY.innerHTML = format(e.target.value)
+}
+function setCardCvc(e){
+    cardCvc.innerHTML = format(e.target.value)
+}
+
+function format(s) {
+    return s.toString().replace(/\d{4}(?=.)/g, "$& ")
+}
+
+numberInp.addEventListener("keyup", setCardNunmber)
+nameInp.addEventListener("keyup", setCardName)
+mmInp.addEventListener("keyup", setCardMonth)
+yyInp.addEventListener("keyup", setCardYear)
+cvcInp.addEventListener("keyup", setCardCvc)
+
+function handleSubmit(e){
+    
+    e.preventDefault();
+    if (!numberInp.value){
+        numberInp.classList.add('error')
+        numberInp.parentElement.classList.add('error_message')
+    } else if (numberInp.value.length < 16) {
+        numberInp.classList.add('error')
+    } else {
+        numberInp.classList.remove('error')
+        numberInp.parentElement.classList.remove('error_message')
+    }
+    if (!nameInp.value){
+        nameInp.classList.add('error')
+        nameInp.parentElement.classList.add("error_message")
+    }
+    else{
+        nameInp.classList.remove('error')
+        nameInp.parentElement.classList.remove("error_message")
+    }
+    if (!mmInp.value){
+        mmInp.classList.add('error')
+        mmInp.parentElement.classList.add('error_message')
+    }
+    else{
+        mmInp.classList.remove('error')
+        mmInp.parentElement.classList.remove('error_message')
+    }
+    if (!yyInp.value){
+        yyInp.classList.add('error')
+        yyInp.parentElement.add("error_message")
+    }
+    else{
+        yyInp.classList.remove('error')
+        yyInp.parentElement.remove('error_message')
+    }
+    if(!cvcInp.value){
+        cvcInp.classList.add('error')
+        cvcInp.classList.parentElement.add('error_message')
+    }
+    else{
+        cvcInp.classList.remove('error')
+        cvcInp.classList.parentElement.remove('error_message')
+    }
+    if (nameInp.value && 
+        numberInp.value && 
+        mmInp.value && 
+        yyInp.value && 
+        cvcInp.value &&
+        numberInp.value.length == 16
+    ) {
+        done.classList.remove('hide')
+        form.classList.add("hide")
     }
 }
 
-// Understood the name component and variable declaration
+submitBtn.addEventListener("click", handleSubmit(e))
 
-// cardNumber display and value assignment
-function inputCardNum() {
-    let cardNumberInput = numberInp.innerHTML;
-    // Do not allow users to write invalid characters
-    let formattedCardNumber = cardNumberInput.replace(/[^\d]/g, "");
-    formattedCardNumber = formattedCardNumber.substring(0, 16);
-    // Split the card number is groups of 4
-    let cardNumberSections = formattedCardNumber.match(/\d{1,4}/g);
-    if (cardNumberSections !== null) {
-       formattedCardNumber = cardNumberSections.join(" ");
-    }
-    // If the formmattedCardNumber is different to what is shown, change the value
-    if (cardNumberInput !== formattedCardNumber) {
-        numberInp.innerHTML = formattedCardNumber;
-    }
-    cardNumber.innerHTML = numberInp.innerHTML;
-    if (numberInp.innerHTML === "") {
-        cardNumber.innerHTML = numberInp.placeholder;
-    }
-}
 
-/*function confirmBtn(){
-    checkNumber()
-    checkMonth()
-    checkYear()
-    checkCVC()
-}
-*/
+
