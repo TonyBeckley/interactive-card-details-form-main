@@ -179,3 +179,102 @@ button{
     width: 150%;
     margin-top: 50px;
 }
+
+
+@media screen and (max-width: 767px) {
+    *{
+        max-height: none;
+    }
+    .whole{
+        display: flex;
+        flex-direction: column;
+    }
+    .left-wing{
+        height: 30vh;
+        width: 100%;
+    }
+    .cards{
+        width: 300px;
+        height: 180px;
+        position: absolute;
+        box-shadow: none;
+    }
+    form{
+        margin: 50px auto 20px auto;
+        width: 85%;
+        margin-left: 20px;
+    }
+    .attribution{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0;
+        text-align: center;
+    }
+    .front-card{
+        width: 300px;
+        height: 180px;
+        left: 3%;
+        top: 120px;
+        z-index: 5;
+        margin-right: 0;
+        right: 0;
+    }
+    .fcard-content{
+        width: 250px;
+        height: 150px;
+        padding: 25px;
+    }
+    .fcard-content img{
+        height: 30px;
+        width: 55px;
+    }
+    .fcard-content h1{
+        font-size: 1rem;
+        margin-top: 40px;
+        margin-bottom: 20px;
+    }
+    .fcard-bottom{
+        width: 250px;
+        font-size: 0.7rem;
+    }
+    .back-card{
+        top: 0;
+        margin-top: 20px;
+        bottom: 0;
+        left: 18%;
+    }
+    .right-wing button{
+        width: 105%;
+    }
+    #mm-inp{
+        width: 40px;
+    }
+    #yy-inp{
+        width: 40px;
+        margin-left: 5px;
+    }
+    #cvc-inp{
+        width: 80%;
+    }
+    .exp{
+        margin-right: 10px;
+    }
+    .thank-you button{
+        width: 100%;
+    }
+    .thank-you{
+        margin: 30% auto 70px auto;
+    }
+    .thank-you h2{
+        color:  hsl(278, 68%, 11%);
+        font-size: 2rem;
+        letter-spacing: 3px;
+        margin-top: 50px;
+        margin-bottom: 20px;
+    }
+    .thank-you p{
+        color: hsl(279, 6%, 55%);
+        letter-spacing: 2px;
+    }
+}
