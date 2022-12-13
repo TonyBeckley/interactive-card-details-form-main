@@ -12,7 +12,7 @@ const yyInp = document.getElementById("yy-inp");
 const cvcInp = document.getElementById("cvc-inp");
 const submitBtn = document.getElementById("submit-btn")
 const done = document.querySelector(".thank-you")
-const form = document.querySelector("form")
+const form = document.getElementById("form")
 
 function setCardName(e) {
     cardName.innerHTML = format(e.target.value.toUpperCase())
@@ -40,63 +40,48 @@ mmInp.addEventListener("keyup", setCardMonth)
 yyInp.addEventListener("keyup", setCardYear)
 cvcInp.addEventListener("keyup", setCardCvc)
 
-function handleSubmit(e){
+form.addEventListener("submit", e => {
+    e.preventDefault()
+
+    checkInputs()
+})
+
+function checkInputs() {
+    const nameInpTrim = nameInp.value.trim()
+    const numberInpTrim = numberInp.value.trim()
+    const mmInpTrim = mmInp.value.trim()
+    const yyInpTrim = yyInp.value.trim()
+    const cvcInpTrim = cvcInp.value.trim()
+
+    if(nameInpTrim === ''){
+        setError(nameInp, 'name cannot be blank')
+    }
+    if(numberInpTrim === ''){
+        setError(numberInp, 'number cannot be blank')
+    } else if (numberInpTrim.value.length < 16){
+        setError(numberInp, 'kindly complete the number required')
+    }
+    if(mmInpTrim === ''){
+        setError(mmInp, 'number cannot be blank')
+    } else if (mmInpTrim.value > 12){
+        setError(mmInp, 'kindly input a valid month')
+    }
+    if(yyInpTrim === ''){
+        setError(yyInp, 'number cannot be blank')
+    } else if (yyInpTrim.value < 22){
+        setError(yyInp, 'This card has expired')
+    }
+    if(cvcInpTrim === ''){
+        setError(cvcInp, 'number cannot be blank')
+    } else if (cvcInpTrim.value.length < 16){
+        setError(cvcInp, 'kindly complete the number required')
+    }
     
-    e.preventDefault();
-    if (!numberInp.value){
-        numberInp.classList.add('error')
-        numberInp.parentElement.classList.add('error_message')
-    } else if (numberInp.value.length < 16) {
-        numberInp.classList.add('error')
-    } else {
-        numberInp.classList.remove('error')
-        numberInp.parentElement.classList.remove('error_message')
-    }
-    if (!nameInp.value){
-        nameInp.classList.add('error')
-        nameInp.parentElement.classList.add("error_message")
-    }
-    else{
-        nameInp.classList.remove('error')
-        nameInp.parentElement.classList.remove("error_message")
-    }
-    if (!mmInp.value){
-        mmInp.classList.add('error')
-        mmInp.parentElement.classList.add('error_message')
-    }
-    else{
-        mmInp.classList.remove('error')
-        mmInp.parentElement.classList.remove('error_message')
-    }
-    if (!yyInp.value){
-        yyInp.classList.add('error')
-        yyInp.parentElement.add("error_message")
-    }
-    else{
-        yyInp.classList.remove('error')
-        yyInp.parentElement.remove('error_message')
-    }
-    if(!cvcInp.value){
-        cvcInp.classList.add('error')
-        cvcInp.classList.parentElement.add('error_message')
-    }
-    else{
-        cvcInp.classList.remove('error')
-        cvcInp.classList.parentElement.remove('error_message')
-    }
-    if (nameInp.value && 
-        numberInp.value && 
-        mmInp.value && 
-        yyInp.value && 
-        cvcInp.value &&
-        numberInp.value.length == 16
-    ) {
-        done.classList.remove('hide')
-        form.classList.add("hide")
-    }
 }
 
-submitBtn.addEventListener("click", handleSubmit(e))
-
-
-
+function setError(input, message) {
+    const formControl = input.parentElement
+    const small = formControl.querySelector('small')
+    formControl.className = 'form-control error'
+    small.innerHTML = message
+}

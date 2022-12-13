@@ -10,24 +10,30 @@ form{
     position: relative;
     display: flex;
     flex-direction: column;
-    top: 25%;
+    top: 22%;
     margin-left: 90%;
     width: 500px;
 }
 label{
     color: hsl(278, 68%, 11%);
+    margin-top: 40px;
     margin-bottom: 10px;
     font-size: 0.9rem;
     letter-spacing: 2px;
 }
 input{
-    margin-bottom: 30px;
+    
+    display: block;
+    position: relative;
     width: 90%;
     height: 50px;
     padding: 0 20px;
     border-radius: 10px;
     border: solid hsl(270, 3%, 87%);
     font-size: 1.3rem;
+}
+input:focus{
+    border-color: hsl(249, 99%, 64%);
 }
 input::placeholder{
     color: hsl(279, 6%, 55%);
@@ -41,10 +47,9 @@ button{
     background-color: hsl(278, 68%, 11%);
     color: white;
     border-radius: 10px;
+    margin-top: 50px;
 }
-.hide{
-    display: none !important;
-}
+
 .whole{
     display: flex;
 }
@@ -111,16 +116,19 @@ button{
     border-radius: 12px;
     box-shadow: 20px 30px 100px rgba(0, 0, 0, 0.3);
 }
-.error{
-    border: 2px solid red;
+.hide{
+    display: none !important;
 }
-.error_message{
-    gap: 0;
+.form-control.error input{
+    border-color: hsl(0, 100%, 66%);
+    visibility: hidden;
 }
-.error_message::after{
-    content: "cant't be blank";
-    color: red;
-    margin-top: .2rem;
+.form-control small{
+    color: hsl(0, 100%, 66%);
+    position: absolute;
+    padding-left: 5px;
+    padding-top: 5px;
+    visibility: hidden;
 }
 
 #mm-inp{
@@ -128,7 +136,7 @@ button{
 }
 #yy-inp{
     width: 70px;
-    margin-left: 10px;
+    margin-left: 5px;
 }
 #cvc-inp{
     width: 180px;
@@ -142,6 +150,7 @@ button{
 }
 .exp{
     margin-right: 30px;
+    margin-top: 40px;
 }
 .cvc-form{
     display: flex;
