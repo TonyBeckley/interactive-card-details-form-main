@@ -237,12 +237,23 @@ button{
     .fcard-bottom{
         width: 250px;
         font-size: 0.7rem;
+        letter-spacing: 1px;
+        word-spacing: normal;
+        font-weight: 100;
     }
     .back-card{
+        position: absolute;
         top: 0;
         margin-top: 20px;
         bottom: 0;
         left: 18%;
+    }
+    .back-card p{
+        top: 82px;
+        right: 0;
+        left: 15rem;
+        font-size: 0.7rem;
+        letter-spacing: 1px;
     }
     .right-wing button{
         width: 105%;
