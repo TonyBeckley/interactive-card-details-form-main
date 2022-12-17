@@ -45,7 +45,7 @@
         <div class="form-control">
           <input type="text" id="name-inp"
           onkeypress="return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode === 32)"
-          placeholder="e.g. Jane Appleseed" required>
+          placeholder="e.g. Jane Appleseed">
           <small>Error message</small>
         </div>
 
@@ -55,8 +55,7 @@
           id="number-inp" placeholder="e.g. 1234 5678 9123 0000" 
           oninput = "if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
           onkeypress="return event.charCode >= 48 && event.charCode <= 57"
-          minlength="16" maxlength="16"
-          required>
+          minlength="16" maxlength="16">
           <small>Error message</small>
         </div>
 
@@ -69,15 +68,14 @@
                 oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                 onkeypress="return event.charCode >= 48 && event.charCode <= 57"
                 minlength="2" maxlength="2"
-                placeholder="MM"
-                required>
+                placeholder="MM">
                 <small>Error message</small>
               </div>
               <div class="form-control">
                 <input type="number" id="yy-inp" 
                 oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                 onkeypress="return event.charCode >= 48 && event.charCode <= 57"
-                placeholder="YY" minlength="2" maxlength="2" required>
+                placeholder="YY" minlength="2" maxlength="2">
                 <small>Error message</small>
               </div>
             </div>
@@ -88,7 +86,7 @@
               <input type="number" id="cvc-inp" 
               oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
               onkeypress="return event.charCode >= 48 && event.charCode <= 57"
-              placeholder="e.g. 123" minlength="3" maxlength="3" required>
+              placeholder="e.g. 123" minlength="3" maxlength="3">
               <small>Error message</small>
             </div>
           </div>

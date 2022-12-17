@@ -54,27 +54,25 @@ function checkInputs() {
     const cvcInpTrim = cvcInp.value.trim()
 
     if(nameInpTrim === ''){
-        setError(nameInp, 'name cannot be blank')
+        setError(nameInp, 'Name cannot be blank')
     }
     if(numberInpTrim === ''){
-        setError(numberInp, 'number cannot be blank')
+        setError(numberInp, 'Card number cannot be blank')
     } else if (numberInpTrim.value.length < 16){
-        setError(numberInp, 'kindly complete the number required')
+        setError(numberInp, 'Kindly complete the number required')
     }
-    if(mmInpTrim === ''){
-        setError(mmInp, 'number cannot be blank')
-    } else if (mmInpTrim.value > 12){
-        setError(mmInp, 'kindly input a valid month')
+    if((mmInpTrim === '') || (yyInpTrim === '')){
+        setError(mmInp, 'Month or Year cannot be blank')
+    } else if ((mmInpTrim.value > 12) || (yyInpTrim.value < 22)){
+        setError(mmInp, 'Invalid input')
     }
-    if(yyInpTrim === ''){
-        setError(yyInp, 'number cannot be blank')
-    } else if (yyInpTrim.value < 22){
-        setError(yyInp, 'This card has expired')
+    if(yyInpTrim === '' || yyInpTrim.value < 22){
+        setError(yyInp, '')
     }
     if(cvcInpTrim === ''){
-        setError(cvcInp, 'number cannot be blank')
+        setError(cvcInp, 'CVC number cannot be blank')
     } else if (cvcInpTrim.value.length < 16){
-        setError(cvcInp, 'kindly complete the number required')
+        setError(cvcInp, 'Kindly complete the number required')
     }
     
 }
@@ -83,5 +81,5 @@ function setError(input, message) {
     const formControl = input.parentElement
     const small = formControl.querySelector('small')
     formControl.className = 'form-control error'
-    small.innerHTML = message
+    small.innerText = message
 }
