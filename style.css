@@ -54,7 +54,6 @@ button{
     border-radius: 10px;
     margin-top: 50px;
 }
-
 .whole{
     display: flex;
 }
@@ -215,6 +214,9 @@ button{
         width: 85%;
         margin-left: 20px;
     }
+    small{
+        max-width: 47%;
+    }
     .attribution{
         position: absolute;
         left: 50%;
@@ -281,6 +283,10 @@ button{
     }
     .exp{
         margin-right: 10px;
+    }
+    .attribution{
+        position: relative;
+        margin-top: 30px;
     }
     .thank-you button{
         width: 100%;
