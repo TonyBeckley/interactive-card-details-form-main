@@ -5,6 +5,11 @@
     max-height: 100vh;
     font-family: 'Space Grotesk', sans-serif;
 }
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
 form{
     position: relative;

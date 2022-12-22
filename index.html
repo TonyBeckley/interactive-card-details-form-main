@@ -52,7 +52,7 @@
         <label for="number-inp">CARD NUMBER</label>
         <div class="form-control">
           <input type = "number"
-          id="number-inp" placeholder="e.g. 1234 5678 9123 0000" 
+          id="number-inp" placeholder="e.g. 1234 5678 9123 0000" inputmode="numeric"
           oninput = "if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
           onkeypress="return event.charCode >= 48 && event.charCode <= 57"
           minlength="16" maxlength="16">
@@ -64,7 +64,7 @@
             <label class="expDate">EXP. DATE (MM/YY)</label>
             <div class="expDate-input">
               <div class="form-control">
-                <input type="number" id="mm-inp"
+                <input type="number" id="mm-inp" inputmode="numeric"
                 oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                 onkeypress="return event.charCode >= 48 && event.charCode <= 57"
                 minlength="2" maxlength="2"
@@ -72,7 +72,7 @@
                 <small>Error message</small>
               </div>
               <div class="form-control">
-                <input type="number" id="yy-inp" 
+                <input type="number" id="yy-inp" inputmode="numeric"
                 oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                 onkeypress="return event.charCode >= 48 && event.charCode <= 57"
                 placeholder="YY" minlength="2" maxlength="2">
@@ -83,7 +83,7 @@
           <div class="cvc-form">
             <label for="cvc">CVC</label>
             <div class="form-control">
-              <input type="number" id="cvc-inp" 
+              <input type="number" id="cvc-inp" inputmode="numeric"
               oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
               onkeypress="return event.charCode >= 48 && event.charCode <= 57"
               placeholder="e.g. 123" minlength="3" maxlength="3">
