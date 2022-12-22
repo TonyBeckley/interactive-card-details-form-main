@@ -210,6 +210,9 @@ button{
         max-width: 47%;
         margin-bottom: 30px;
     }
+    input:focus{
+        border-color: hsl(249, 99%, 64%);
+    }
     .attribution{
         position: absolute;
         left: 50%;
