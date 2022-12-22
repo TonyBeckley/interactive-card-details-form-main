@@ -86,3 +86,11 @@ function setError(input, message) {
     formControl.className = 'form-control error'
     small.innerText = message
 }
+
+document.documentElement.style.setProperty('overflow', 'auto')
+const metaViewport = document.querySelector('meta[name=viewport]')
+metaViewport.setAttribute('content', 'height=' + initialHeight + 'px, width=device-width, initial-scale=1.0')
+
+
+const metaResetViewport = document.querySelector('meta[name=viewport]')
+metaResetViewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0')
