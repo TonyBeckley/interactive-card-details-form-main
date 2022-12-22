@@ -66,6 +66,9 @@ function checkInputs() {
     } else if ((mmInpTrim.value > 12) || (yyInpTrim.value < 22)){
         setError(mmInp, 'Invalid input')
     }
+    else if ((mmInpTrim.value <= 12) && (yyInpTrim.value <= 22)){
+        setError(mmInp, 'Expired')
+    }
     if(yyInpTrim === '' || yyInpTrim.value < 22){
         setError(yyInp, '')
     }

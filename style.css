@@ -27,7 +27,6 @@ label{
     letter-spacing: 2px;
 }
 input{
-    
     display: block;
     position: relative;
     width: 90%;
@@ -56,13 +55,6 @@ button{
 }
 .whole{
     display: flex;
-}
-.attribution{
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 5px;
-    text-align: center;
 }
 .left-wing{
     background-image: url(./images/bg-main-desktop.png);
@@ -210,12 +202,13 @@ button{
         box-shadow: none;
     }
     form{
-        margin: 50px auto 20px auto;
+        margin: 70px auto 20px auto;
         width: 85%;
         margin-left: 20px;
     }
     small{
         max-width: 47%;
+        margin-bottom: 30px;
     }
     .attribution{
         position: absolute;
@@ -231,6 +224,7 @@ button{
         top: 120px;
         z-index: 5;
         margin-right: 0;
+        margin-bottom: 20px;
         right: 0;
     }
     .fcard-content{
@@ -267,6 +261,10 @@ button{
         left: 15rem;
         font-size: 0.7rem;
         letter-spacing: 1px;
+    }
+    .cvc-form label{
+        margin-top: 42px;
+        margin-bottom: 8px;
     }
     .right-wing button{
         width: 105%;
